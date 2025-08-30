@@ -1,0 +1,16 @@
+node_modules/
+*.log
+*.json
+*.md
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+.cache/
+.vscode/
+.idea/
+.DS_Store
+coverage/
+build/
+dist/

@@ -8,10 +8,10 @@ loadEnv(path.resolve(__dirname, '../.env'));
 
 // siliconflow 配置。
 // 使用方式见：https://docs.siliconflow.cn/cn/api-reference/chat-completions/chat-completions
-const siliconflow_config = {
+const siliconflowConfig = {
   apiKey: process.env.API_KEY,
   apiUrl: 'https://api.siliconflow.cn/v1/chat/completions',
-  model: "Qwen/Qwen2.5-7B-Instruct",
+  model: 'Qwen/Qwen2.5-7B-Instruct',
   chunkTransform: (chunk) => {
     const chunkStr = extractContentFromSiliconFlowChunk(chunk);
     return chunkStr;
@@ -19,5 +19,5 @@ const siliconflow_config = {
 };
 
 // 创建并启动聊天应用
-const chat = new TerminalChat(siliconflow_config);
+const chat = new TerminalChat(siliconflowConfig);
 chat.start();

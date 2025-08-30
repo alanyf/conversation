@@ -3,7 +3,7 @@
  * @param {string} chunk - 包含 SiliconFlow 响应的 chunk 字符串
  * @returns {string} - 提取后的实际内容
  */
-function extractContentFromSiliconFlowChunk(chunk) {
+function extractContentFromSiliconFlowChunk (chunk) {
   const data = chunk.trim();
   const response = data
     .split('data: ')
@@ -29,7 +29,7 @@ function extractContentFromSiliconFlowChunk(chunk) {
  * @param {string} chunk - 包含 Ptaas 响应的 chunk 字符串
  * @returns {string} - 提取后的实际内容
  */
-function extractContentFromPtaasChunk(chunk) {
+function extractContentFromPtaasChunk (chunk) {
   let response = chunk
     .replaceAll('\n\ndata: ', '')
     .replaceAll('\ndata: ', '')
@@ -42,5 +42,5 @@ function extractContentFromPtaasChunk(chunk) {
 
 module.exports = {
   extractContentFromPtaasChunk,
-  extractContentFromSiliconFlowChunk,
-}
+  extractContentFromSiliconFlowChunk
+};

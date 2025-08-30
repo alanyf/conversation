@@ -22,13 +22,13 @@ const streamQuery = ({
   onChange,
   onFinish,
   onError,
-  chunkTransform,
+  chunkTransform
 }) => {
   const { url, method = 'GET', body, headers = {} } = params;
   const parsedUrl = new URL(url);
   const isHttps = parsedUrl.protocol === 'https:';
   const requestModule = isHttps ? https : http;
-  
+
   const requestOptions = {
     hostname: parsedUrl.hostname,
     port: parsedUrl.port || (isHttps ? 443 : 80),
@@ -36,13 +36,13 @@ const streamQuery = ({
     method,
     headers: {
       'Content-Type': 'application/json',
-      ...headers,
-    },
+      ...headers
+    }
   };
 
   let fullText = '';
   let aborted = false;
-  
+
   const req = requestModule.request(requestOptions, (res) => {
     if (res.statusCode !== 200) {
       let errorData = '';
@@ -62,7 +62,7 @@ const streamQuery = ({
     res.once('data', (chunk) => {
       onStart?.();
     });
-    
+
     res.on('data', (chunk) => {
       if (aborted) return;
       const chunkStr = chunk?.toString();
@@ -95,7 +95,7 @@ const streamQuery = ({
   if (method === 'POST' && body) {
     req.write(JSON.stringify(body));
   }
-  
+
   req.end();
 
   return {
@@ -103,7 +103,7 @@ const streamQuery = ({
       aborted = true;
       req.destroy();
       console.log('Request aborted');
-    },
+    }
   };
 };
 
