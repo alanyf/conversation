@@ -1,0 +1,22 @@
+{
+  "name": "terminal-stream-chat",
+  "version": "1.0.0",
+  "description": "基于Node.js的终端流式对话应用",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "chat",
+    "stream",
+    "terminal",
+    "openai"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
