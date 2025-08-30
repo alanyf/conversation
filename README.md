@@ -24,7 +24,7 @@ cd conversation
 2. 设置API密钥（二选一）：
 ```bash
 # 方法1: 设置环境变量
-export OPENAI_API_KEY="your-api-key-here"
+export API_KEY="your_api_key"
 
 # 方法2: 在.env中直接配置
 ```
